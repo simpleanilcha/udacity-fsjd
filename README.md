@@ -1,6 +1,4 @@
-# Compile typescript
-1. npm i -g typescript
-2. tsc main.ts --outDir './build/'
-
-# Check main.js
-node build/main.js
+# Run Typescript Project
+1. npm install
+2. npm run build
+3. npm run start

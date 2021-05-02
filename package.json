@@ -1,0 +1,24 @@
+{
+  "name": "udacity-fsjd",
+  "version": "1.0.0",
+  "description": "1. npm i -g typescript\r 2. tsc main.ts --outDir './build/'",
+  "main": "index.js",
+  "scripts": {
+    "start": "node './build/index.js' ",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpleanilcha/udacity-fsjd.git"
+  },
+  "keywords": [],
+  "author": "Anil Maharjan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simpleanilcha/udacity-fsjd/issues"
+  },
+  "homepage": "https://github.com/simpleanilcha/udacity-fsjd#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
