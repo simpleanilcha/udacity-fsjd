@@ -1,17 +1,20 @@
-const util = require('./utilities/serveArray1.js');
-const { lgNum, cut3 } = require('./utilities/serveArray2.js');
+const w = 4
+const x = 6
+const y = '5'
+const z = 'cat'
 
-const numArr = [1, 3, 4, 6, 9];
-const wordArr = ['apple', 'banana', 'grapes', 'orange'];
+const multiply = (num1, num2) => {
+  console.log(`${num1} * ${num2} =`, num1 * num2)
+}
 
-// Add numbers in an Array
-console.log(util.sum(numArr))
+const add = (num1, num2) => {
+  console.log(`${num1} + ${num2} =`, num1 + num2)
+}
 
-// Concatenate two arrays
-console.log(util.concat(numArr, wordArr))
+multiply(w, x)
+multiply(w, y)
+multiply(w, d)
 
-// Find the largest number in an Array
-console.log(lgNum(numArr))
-
-// Remove the 3rd item from an Array
-console.log(cut3(wordArr))
+add(w, x)
+add(w, y)
+add(w, z)

@@ -1,5 +1,6 @@
-# udacity-fsjd
-Udacity's Full Stack JavaScript Developer Nanodegree Program
+# Compile typescript
+1. npm i -g typescript
+2. tsc main.ts --outDir './build/'
 
-## To Run the Exercise Code
-Use node index.js or node index or node .
+# Check main.js
+node build/main.js
