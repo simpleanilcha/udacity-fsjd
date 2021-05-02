@@ -4,6 +4,7 @@
   "description": "Udacity's Full Stack JavaScript Developer Nanodegree Program",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint 'src/index.js' --ignore-pattern node_modules/",
     "prettier": "prettier --config .prettierrc 'src/**/*.js' --write"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/simpleanilcha/udacity-fsjd#readme",
   "devDependencies": {
+    "eslint": "^7.25.0",
     "prettier": "^2.2.1"
   }
 }
