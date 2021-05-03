@@ -4,7 +4,7 @@
   "description": "1. npm i -g typescript\r 2. tsc main.ts --outDir './build/'",
   "main": "index.js",
   "scripts": {
-    "start": "node './build/index.js' ",
+    "start": "node './build/index.js'",
     "build": "npx tsc"
   },
   "repository": {
