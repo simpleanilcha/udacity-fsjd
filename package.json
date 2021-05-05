@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/simpleanilcha/udacity-fsjd#readme",
   "devDependencies": {
+    "@types/node": "^15.0.2",
     "typescript": "^4.2.4"
   }
 }
