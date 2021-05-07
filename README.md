@@ -1,4 +1,3 @@
-# Run Typescript Project
+# Run this project
 1. npm install
-2. npm run build
-3. npm run start
+2. npm run test
