@@ -1,23 +1,12 @@
-import countries from "../index";
+import supertest from 'supertest'
+import app from '../index'
 
-it("should get basic data on the country canada", async () => {
-	const data = await countries.getCountry('canada');
-	expect(data).toEqual({
-		capital: 'Ottawa',
-		region: 'Americas',
-		numericCode: '124'
-	});
-});
+const request = supertest(app)
 
-/** Add test for getRegionCountries function here */
-it("should get the countries in the region NAFTA", async () => {
-  const data = await countries.getRegionCountries('nafta');
-  expect(data).toEqual(['Canada', 'Mexico', 'United States of America']);
+describe('Test endpoint responses', () => {
+  it('gets the api endpoint', async (done) => {
+    const response = await request.get('/api')
+    expect(response.status).toBe(200)
+    done()
+  })
 })
-
-it("should get capitals of NAFTA countries", async () => {
-	const data = await countries.getRegionCapitals('nafta');
-	expect(data).toEqual([
-		'Ottawa', 'Mexico City', 'Washington, D.C.'
-	]);
-});
