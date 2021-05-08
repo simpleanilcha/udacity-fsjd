@@ -1,14 +1,23 @@
-import express from 'express'
+import arrays from './utilities/arrays.js';
+import numbers from './utilities/numbers.js';
+import strings from './utilities/strings.js';
 
-const app = express()
-const port = 5000
+const numArr = [3, 4, 5, 6];
+const wordArr = ['cat', 'dog', 'rabbit', 'bird'];
+const arrSum = arrays.addArr(numArr);
+const mixArr = arrays.concatArr(numArr, wordArr);
+const myNum = ('15' as unknown) as number % 2;
+const five = parseInt('5');
 
-// set endpoint
-app.get('/api', (req, res) => {
-  res.send("Hello, world.")
-})
+const newArr = (num: number, arr:(string|number)[]): (string|number)[]=> {
+    return [num, ...arr];
+}
 
-// check for port to avoid all ready in use error testing
-app.listen(port, () => console.log(`Listening on port ${port}!`))
+console.log(newArr(3, wordArr));
+console.log(arrays.cut3(mixArr));
+console.log(numbers.sum(arrSum, myNum));
+console.log(strings.capitalize('the quick brown fox'));
+console.log(numbers.multiply(five, 8));
+console.log(arrays.lgNum(mixArr));
 
-export default app
+export default newArr;
