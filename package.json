@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/simpleanilcha/udacity-fsjd#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/jasmine": "^3.7.0",
     "@types/node": "^15.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "jasmine": "^3.7.0",
     "jasmine-spec-reporter": "^7.0.0"
   }
