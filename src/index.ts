@@ -1,29 +1,39 @@
 // # Instructions
 
-// The Express server is already complete. Create 3 endpoints. Then write middleware that logs the endpoint to the console when visited. Only include the middleware on 2 of the 3 endpoints. Build your TypeScript project and confirm that your logger works on the build.
+// You will create an API that processes a CSV file (users.csv) and turns it into a JSON file upon visiting the endpoint /convert. Additionally, any phone number that is missing should be filled in with the string, "missing data".
 
-// Example: "/countries was visited"
+// Use the [csvtojson](https://www.npmjs.com/package/csvtojson) node module as a library to do the conversion.
 
-import express from 'express'
-import logger from './utilities/logger'
+import express from 'express';
+import {promises as fsPromises} from 'fs'
+import csv from 'csvtojson'
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
-// routes
-app.get('/continents', logger, (req, res) => {
-    res.send('continents!')
-})
+const inputFile = './users.csv'
+const outputFile = 'users.json'
 
-app.get('/countries', logger, (req, res) => {
-    res.send('countries!')
-})
-
-app.get('/oceans', (req, res) => {
-    res.send('oceans!')
+// define a route handler for the default home page
+app.get('/convert', (req, res) => {
+    res.send('convrting in process!');
+    csv()
+    .fromFile(inputFile)
+    .then((data) => {
+        let newData = data.map( (item: {first_name: string; last_name: string; phone: string;}) => {
+            let first = item.first_name;
+            let last = item.last_name;
+            let phone = item.phone;
+            if (item.phone === "") {
+                phone = "missing data";
+            }
+            return {first, last, phone};
+        })
+        fsPromises.writeFile(outputFile, JSON.stringify(newData));
+    })
 })
 
 // start the Express server
 app.listen(port, () => {
-    console.log(`server started at http://localhost:${port}`)
-})
+  console.log(`server started at http://localhost:${port}`);
+});
