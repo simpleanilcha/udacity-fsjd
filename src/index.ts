@@ -1,14 +1,26 @@
+// # Instructions
+
+// The Express server is already complete. Create 3 endpoints. Then write middleware that logs the endpoint to the console when visited. Only include the middleware on 2 of the 3 endpoints. Build your TypeScript project and confirm that your logger works on the build.
+
+// Example: "/countries was visited"
+
 import express from 'express'
-import routes from './routes/index'
+import logger from './utilities/logger'
 
 const app = express()
 const port = 3000
 
-app.use('/api', routes)
+// routes
+app.get('/continents', logger, (req, res) => {
+    res.send('continents!')
+})
 
-// define a route handler for the default home page
-app.get('/', (req, res) => {
-    res.send('Connected!')
+app.get('/countries', logger, (req, res) => {
+    res.send('countries!')
+})
+
+app.get('/oceans', (req, res) => {
+    res.send('oceans!')
 })
 
 // start the Express server
