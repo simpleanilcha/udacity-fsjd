@@ -1,11 +1,14 @@
 import express from 'express'
+import routes from './routes/index'
 
 const app = express()
 const port = 3000
 
+app.use('/api', routes)
+
 // define a route handler for the default home page
-app.get('/api', (req, res) => {
-    res.send('Server is working!')
+app.get('/', (req, res) => {
+    res.send('Connected!')
 })
 
 // start the Express server
