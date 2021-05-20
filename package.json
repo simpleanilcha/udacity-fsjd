@@ -4,10 +4,10 @@
   "description": "Udacity Full Stack JavaScipt Developer Nanodegree",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
-    "build": "npx tsc",
-    "jasmine": "jasmine",
-    "test": "npm run build && npm run jasmine"
+    "start": "node src/server.ts",
+    "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess",
+    "test": "jasmine-ts",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,22 +21,19 @@
   },
   "homepage": "https://github.com/simpleanilcha/udacity-fsjd#readme",
   "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/csvtojson": "^1.1.5",
     "@types/express": "^4.17.11",
     "@types/jasmine": "^3.7.0",
-    "@types/node": "^15.0.2",
-    "@types/supertest": "^2.0.11",
-    "nodemon": "^2.0.7",
+    "jasmine-ts": "^0.3.3",
     "ts-node": "^9.1.1",
+    "tsc-watch": "^4.2.9",
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "csvtojson": "^2.0.10",
+    "body-parser": "^1.19.0",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "jasmine": "^3.7.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "supertest": "^6.1.3"
+    "pg": "^8.6.0"
   }
 }
